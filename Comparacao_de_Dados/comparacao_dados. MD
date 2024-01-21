@@ -1,0 +1,146 @@
+Comparação de Dados em JavaScript
+
+Introdução
+Nesta aula, vamos aprender sobre a comparação de dados no JavaScript. Até agora, vimos várias operações diferentes na linguagem como operações matemáticas, concatenação de strings e conversão de tipos de dados. Mas outro recurso muito utilizado na programação são as comparações entre valores.
+
+Isso significa verificar se dois valores são iguais, diferentes, maior ou menor que outros. Essas operações também são muito importantes e vamos explorá-las nesta aula.
+
+Vamos ver mais sobre o tipo de dado booleano, que indica um valor verdadeiro ou falso. Isso porque as comparações sempre retornam um booleano (true ou false).
+
+Operadores de Comparação
+Existem vários operadores em JavaScript para fazer comparações:
+
+Igualdade
+O operador de igualdade verifica se dois valores são iguais. Ele é representado por dois sinais de igual (==).
+
+Vamos testar no console:
+
+3 == 3 // true4 == 3 // false 
+
+Podemos até colocar expressões mais complexas:
+
+3 * 3 + 1 == 10 // true
+
+Também existe o operador representado por três sinais de igual (===). Qual é a diferença entre eles?
+
+O primeiro operador (==) compara apenas o valor, ignorando o tipo do dado. Já o segundo (===) compara valor e tipo, sendo mais restrito.
+
+Exemplo:
+
+10 == "10" // true10 === "10" // false
+
+O primeiro retorna true pois converte a string "10" para número antes de comparar. O segundo retorna false pois número e string são tipos diferentes.
+
+Dica: Na maioria dos casos, utilizamos o operador mais restrito (===) para evitar problemas.
+
+Desigualdade
+Temos também os operadores de desigualdade:
+
+!= (diferente)
+!== (estritamente diferente)
+
+Funcionam de forma parecida com a igualdade:
+
+3 != 3 // false5 != "5" // false 5 !== "5" // true
+
+Novamente, o operador mais restrito (!==) compara valor e tipo, enquanto o (!) compara apenas valor.
+
+Relacionais
+Por fim, existem os operadores relacionais, bem conhecidos da matemática:
+
+(maior que)
+
+= (maior ou igual a)
+
+< (menor que)
+<= (menor ou igual a)
+
+Exemplos:
+
+4 > 3 // true5 > 10 // false5 >= 5 // true6 < 7 // true 6 < 6 // false
+
+Bem simples! Verificam se um número é maior, menor ou igual ao outro.
+
+Booleanos
+Vimos que todas as comparações retornam valores booleanos (verdadeiro ou falso). Em JavaScript, usamos as palavras reservadas true e false.
+
+O tipo de dado booleano (bool) só pode assumir um desses dois valores. Ele é muito comum em condicionais, loops e outras estruturas que veremos mais para frente.
+
+Podemos armazenar booleans em variáveis:
+
+let maiorDeIdade = truelet resultado = 5 > 3 // true
+
+E também convertê-los para string, se necessário:
+
+String(true) // retorna "true"String(false) // retorna "false"
+
+Exemplos Práticos
+Vamos ver alguns exemplos práticos de como utilizar esses operadores:
+
+Validar uma senha
+Precisamos garantir que uma senha informada pelo usuário atenda alguns critérios, como tamanho mínimo.
+
+function validaSenha(senha) {  if (senha.length >= 6) {    return true  } else {    return false  }}validaSenha("abc123") // truevalidaSenha("abc1") // false
+
+Usamos o operador relacional maior ou igual a (>=) para comparar o tamanho da string com o mínimo necessário.
+
+Comparar objetos
+Podemos comparar se dois objetos são iguais com o operador restrito:
+
+const pessoa1 = { nome: "Maria", idade: 20 }  const pessoa2 = { nome: "Maria", idade: 20 }pessoa1 === pessoa2 // false
+
+Retorna false pois cada objeto criado aponta para um local diferente na memória, mesmo que com valores iguais.
+
+Para comparar propriedades específicas, fazemos:
+
+pessoa1.nome === pessoa2.nome // true pessoa1.idade === pessoa2.idade // true
+
+Validar um CPF
+Para validar se uma string contém um CPF válido, podemos usar expressões regulares:
+
+function validaCPF(cpf) {  const regex = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/    return regex.test(cpf) }validaCPF("123.456.789-09") // truevalidaCPF("123.456.789.09") // false  
+
+O operador regex.test() retorna true se a string corresponder ao padrão da expressão regular.
+
+Conclusão
+Nesta aula, aprendemos sobre os principais operadores para comparação de valores em JavaScript:
+
+Igualdade (== e ===)
+Desigualdade (!= e !==)
+Relacionais (> >= < <=)
+Vimos também sobre o tipo booleano e exemplos práticos de utilização dessas comparações.
+
+Essas operações são muito importantes na programação para tomar decisões e avaliar condições. Então vale a pena praticar bastante para dominá-las!
+
+
+
+Mapa Mental 
+
+
+Comparação de dados
+Operadores de comparação
+Igualdade
+== (compara apenas valor)
+=== (compara valor e tipo - mais restrito)
+Desigualdade
+!= (compara apenas valor)
+!== (compara valor e tipo - mais restrito)
+Relacionais
+maior que
+
+= maior ou igual
+
+< menor que
+<= menor ou igual
+Retorno booleano
+As comparações sempre retornam true ou false
+
+Dica
+Utilizar os operadores mais restritos (=== e !==) na maioria dos casos para evitar problemas
+
+Exemplos
+3 == 3 -> true
+4 == "4" -> true (compara apenas valor)
+4 === "4" -> false (compara valor e tipo)
+10 > 5 -> true
+10 < 5 -> false
