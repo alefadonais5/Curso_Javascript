@@ -1,11 +1,11 @@
-let primeiroNome = null
-let sobreNome = null
-let campo_De_Estudo = null
-let ano_De_Nascimento = null
+const primeiroNome = prompt("Nome: ")
+const sobreNome = prompt("Sobrenome: ")
+const campo_De_Estudo = prompt ("Qual a sua atuação")
+const ano_De_Nascimento = prompt("Ano de Nascimento")
 
-primeiroNome = prompt("Nome: ")
-sobreNome = prompt("Sobrenome: ")
-campo_De_Estudo = prompt ("Qual a sua atuação")
-ano_De_Nascimento = prompt("Ano de Nascimento")
-
-console.log(primeiroNome, sobreNome, campo_De_Estudo, ano_De_Nascimento)
+alert (
+    "Recruta cadastrado com sucesso! \n" +
+    "\n Nome Completo: " + primeiroNome + " " + sobreNome +
+    "\n Campo de estudo: " + campo_De_Estudo +
+    "\n Idade: " + (2023 - ano_De_Nascimento) 
+)
