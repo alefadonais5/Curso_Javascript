@@ -1,21 +1,26 @@
-let saldo = parseFloat(prompt("Qual a quantidade de dinheiro disponível?"))
-
+let saldo = parseFloat(prompt("Informe a quantidade de dinheiro inicial:"))
+let opcao = ""
 
 do {
-    let menu = prompt("Menu Interativo: \n" +
-    "1. Adicionar \n" +
-    "2. Remover \n" +
-    "3. Encerrar \n" +
-    
-    "\nSaldo da conta R$ " + saldo + ".") 
-    
-    if (menu === "1"){
-        let adicionar = parseFloat(prompt("Digite o valor que deseja adicionar?"))
-        saldo =+ adicionar  
-    } else if (menu === "2"){
-        let remover = parseFloat(prompt("Digite o valor que deseja remover?"))
-        saldo =- remover
-    } else {
-        alert("Programa encerrado")
-    }
-}while (menu <= "3")
+  opcao = prompt(
+    "Saldo disponível: R$ " + saldo +
+    "\n1 - Adicionar dinheiro" +
+    "\n2 - Remover dinheiro" +
+    "\n3 - Sair"
+  )
+
+  switch (opcao) {
+    case "1":
+      saldo += parseFloat(prompt("Informe o valor a ser adicionado:"))
+      break
+    case "2":
+      saldo -= prompt("Informe o valor a ser removido:")
+      break
+    case "3":
+      alert("Saindo...")
+      break
+    default:
+      alert("Entrada inválida.")
+      break
+  }
+} while (opcao !== "3");
