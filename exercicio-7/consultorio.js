@@ -6,7 +6,7 @@ do {
     for (let i = 0; i < fila.length; i++){
         pacientes += (i + 1) + "º - " + fila[i] + "\n"
     }
-
+    
     opcao = prompt(
         "Pacientes:\n" + pacientes + 
         "\n Escola uma ação:\n 1. Novo paciente\n2. Consultar paciente\n3. Sair"
